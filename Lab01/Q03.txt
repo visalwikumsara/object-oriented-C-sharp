@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab01._3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Write a console application program to calculate the sum of all numbers from 1 to a given positive integer.Prompt the user to enter a positive integer and display the sum.If the user inputs a negative value it should display "Error".
+
+            Console.WriteLine("Enter number ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+
+            for(int i = 1; i<= num; i++)
+            {
+                if(num > 0)
+                {
+                    sum += i;
+                }
+                else
+                {
+                    Console.WriteLine("Error");
+                }
+            }
+            Console.WriteLine("The total is :"+sum);
+            Console.ReadLine();
+        }
+    }
+}

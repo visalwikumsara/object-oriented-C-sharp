@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab01.6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter student's name:");
+            string studentName = Console.ReadLine();
+
+            Console.WriteLine("Enter exam marks:");
+            if (int.TryParse(Console.ReadLine(), out int examMarks))
+            {
+                if (examMarks >= 0 && examMarks <= 100)
+                {
+                    char grade = GetGrade(examMarks);
+                    Console.WriteLine($"{studentName}'s grade is: {grade}");
+                }
+                else
+                {
+                    Console.WriteLine("Error: Marks should be between 0 and 100.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error: Invalid input for exam marks. Please enter a valid numeric value.");
+            }
+        }
+
+        static char GetGrade(int marks)
+        {
+            if (marks >= 75 && marks <= 100)
+            {
+                return 'A';
+            }
+            else if (marks >= 60 && marks <= 74)
+            {
+                return 'B';
+            }
+            else if (marks >= 50 && marks <= 59)
+            {
+                return 'C';
+            }
+            else if (marks >= 40 && marks <= 49)
+            {
+                return 'D';
+            }
+            else
+            {
+                return 'F';
+            }
+        }
+    }
+}

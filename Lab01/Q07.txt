@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab01.7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ATM atm = new ATM();
+
+            while (true)
+            {
+                Console.WriteLine("1. Check balance");
+                Console.WriteLine("2. Deposit");
+                Console.WriteLine("3. Withdraw");
+                Console.WriteLine("4. Quit");
+                Console.Write("Enter choice: ");
+
+                int choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        atm.CheckBalance();
+                        break;
+                    case 2:
+                        atm.Deposit();
+                        break;
+                    case 3:
+                        atm.Withdraw();
+                        break;
+                    case 4:
+                        Console.WriteLine("Thank you for using our ATM!");
+                        return;
+                    default:
+                        Console.WriteLine("Invalid choice.");
+                        break;
+                }
+            }
+        }
+    }
+
+    class ATM
+    {
+        private double balance = 0;
+
+        public void CheckBalance()
+        {
+            Console.WriteLine($"Your current balance is: ${balance}");
+        }
+
+        public void Deposit()
+        {
+            Console.Write("Enter amount to be deposited: $");
+            double amount = double.Parse(Console.ReadLine());
+            balance += amount;
+            Console.WriteLine($"Amount deposited: ${amount}");
+        }
+
+        public void Withdraw()
+        {
+            Console.Write("Enter amount to be withdrawn: $");
+            double amount = double.Parse(Console.ReadLine());
+
+            if (balance >= amount)
+            {
+                balance -= amount;
+                Console.WriteLine($"Amount withdrawn: ${amount}");
+            }
+            else
+            {
+                Console.WriteLine("Insufficient balance.");
+            }
+        }
+    }
+    
+}

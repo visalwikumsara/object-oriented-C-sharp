@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab01._1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+         
+            //Q01
+
+            Console.WriteLine("Enter the Length");
+            int l = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the Width");
+            int w = Convert.ToInt32(Console.ReadLine());
+
+            CalArea(w, l);
+            Console.ReadLine();
+
+        }
+
+        static void CalArea(int width, int length)
+        {
+            int area;
+
+            area = length * width;
+            Console.WriteLine("The area is "+area)
+        }
+    }
+}

@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Product
+{
+
+    class Product
+    {
+        
+        private int productId;
+        private string productName;
+        private double price;
+        private int quantityInStock;
+
+        public Product(int productId, string productName, double price, int quantityInStock)
+        {
+            this.productId = productId;
+            this.productName = productName;
+            this.price = price;
+            this.quantityInStock = quantityInStock;
+        }
+
+        
+        public void DisplayProductDetails()
+        {
+            Console.WriteLine($"Product Name: {productName}");
+            Console.WriteLine($"Price: ${price}");
+            Console.WriteLine($"Quantity in Stock: {quantityInStock}");
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+                
+                Product laptop = new Product(101, "Laptop", 800, 10);
+
+                
+                laptop.DisplayProductDetails();
+
+           
+        }
+    }
+}

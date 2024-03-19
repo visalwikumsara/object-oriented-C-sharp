@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Employee
+{
+    class Employee
+    {
+        public int ID { get; }
+        public string FullName { get; set; }
+        private double salary;
+
+        
+        public double Salary
+        {
+            get { return salary; }
+        }
+
+        
+        public Employee(int id, string fullName, double initialSalary)
+        {
+            ID = id;
+            FullName = fullName;
+            salary = initialSalary;
+        }
+
+        
+        public void UpdateSalary(double newSalary)
+        {
+            salary = newSalary;
+            Console.WriteLine($"Salary updated for employee {ID}: {salary}");
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Employee emp = new Employee(001, "John Doe", 50000);
+
+            
+            Console.WriteLine($"Employee ID: {emp.ID}");
+
+            
+            emp.FullName = " Jhon Philip ";
+            Console.WriteLine($"Updated Full Name: {emp.FullName}");
+
+            
+            emp.UpdateSalary(90000);
+
+            
+            Console.WriteLine($"Updated Salary: {emp.Salary}");
+        }
+    }
+}

@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab01.4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number;
+
+            Console.WriteLine("Enter the number of terms");
+            number= int . Parse(Console.ReadLine());
+
+            Console.WriteLine("First " + number + " terms of the fibonacci series:  ");
+            for (int i = 0; i<number; i++)
+            {
+                int result = Fibonacci(i);
+                Console.WriteLine(result);
+
+               
+            }
+
+            Console.ReadLine();
+
+            }
+        static int Fibonacci (int n)
+        {
+            if (n<=1) // this is the base case, the fibonacci of the 0 is o and 1 is 1
+            {
+                return n; // se here i have got this n
+            }
+            else
+            {
+                return Fibonacci(n - 1) + Fibonacci(n - 2); //the function recursively calls itself with n-1 and n-2
+            }
+        }
+    }
+}

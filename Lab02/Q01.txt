@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Book
+{
+    class Book
+    {
+        public string Title { get; set; }
+        public string Author { get; set; }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Book myBook = new Book();
+
+
+            myBook.Title = "Dessert Flower";
+            myBook.Author = "Waris Dirie";
+
+
+            Console.WriteLine("Book Title: " + myBook.Title);
+            Console.WriteLine("Book Author: " + myBook.Author);
+
+
+            Console.ReadKey();
+        }
+    }
+}
